@@ -23,7 +23,6 @@ public class CloudbookApplication {
 			for (String bean: beanNames) {
 				System.out.println(bean);
 			}
-			
 		};
 	}
 }

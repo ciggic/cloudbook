@@ -1,0 +1,5 @@
+10/04/17
+		1. Spring oAuth2
+		2. YAML , Super set of JSON
+				link: http://docs.ansible.com/ansible/latest/YAMLSyntax.html
+		3. Compare Java Serialization --> XML --> JSON --> YAML {Discuss how easily we can remember}

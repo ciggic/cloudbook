@@ -1,6 +1,25 @@
 10/04/17
-		1. Spring oAuth2
-		2. YAML , Super set of JSON
+		0. Spring application architecture for Partha
+		1. Spring oAuth2 : Just Idea
+		2. YAML , Super set of JSON - Give Basic 
 				link: http://docs.ansible.com/ansible/latest/YAMLSyntax.html
 				Link: https://bitbucket.org/asomov/snakeyaml
 		3. Compare Java Serialization --> XML --> JSON --> YAML {Discuss how easily we can remember}
+		4. Spring Security Explanation
+TODO : Create Login page and redirect login page on login
+		
+
+--------------------------------------------------------------------------------------------------------------------
+10/05/17 & 11/05/17
+	1. RactJs Integration.
+		Link : https://spring.io/guides/tutorials/react-and-spring-data-rest/
+	2. Webpack
+	3. Babel
+	4. npm installation
+	
+-----------------------------------------------------------------------------------------------------------------------
+11/06/17
+    1. Flux integration with
+    	Link : https://facebook.github.io/flux/ 
+    	EX : https://github.com/facebook/flux/tree/master/examples/flux-todomvc/
+    	

@@ -1,14 +1,16 @@
 package com.cloudbook.rhosys.web;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 public class HomeController {
 	
-	@RequestMapping("/")
-	public String home() {		
-		return "Welcome to Cloubook !!!";
+	@RequestMapping("/login")
+	public String home(Model model) {		
+		return "index";
 	}
 	
 }

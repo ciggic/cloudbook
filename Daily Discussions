@@ -22,4 +22,6 @@ TODO : Create Login page and redirect login page on login
     1. Flux integration with
     	Link : https://facebook.github.io/flux/ 
     	EX : https://github.com/facebook/flux/tree/master/examples/flux-todomvc/
-    	
+
+----------------------------------------------------------------------------------------------------------------------
+https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html

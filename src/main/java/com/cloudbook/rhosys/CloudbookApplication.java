@@ -30,7 +30,7 @@ public class CloudbookApplication implements WebMvcConfigurer {
 			String[] beanNames = ctx.getBeanDefinitionNames();
 			Arrays.sort(beanNames);
 			for (String bean: beanNames) {
-				System.out.println(bean);
+//				System.out.println(bean);
 			}
 		};
 	}

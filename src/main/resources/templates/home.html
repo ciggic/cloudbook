@@ -2,27 +2,26 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title th:text="${title}">Title</title>
-<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" href="../../css/bootstrap.min.css" />
-<link rel="stylesheet" th:href="@{/css/login.css}" href="../../css/login.css" />
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}" href="../../css/bootstrap.css" />
 </head>
 <body>
-	<div class="container">
-		<div class="navbar">
-			<div class="navbar-inner">
-				<a class="brand" href="http://www.thymeleaf.org"> Thymeleaf -
-					Plain </a>
-				<ul class="nav">
-					<li><a th:href="@{/}" href="home.html"> Home </a></li>
-				</ul>
-			</div>
+	<div class="row">
+		
+		<div class="container-fluid">	
+			<nav class="navbar navbar-dark bg-dark">
+	    		<h2>
+	    			<span class="display-10 text-secondary">
+	    				Cloudbook
+	    			</span>
+	    		</h2>	
+				<ul class="navbar-nav">
+			    	<li class="nav-item">
+			      		<a class="nav-link" th:href="@{/logout}" href="#">Logout</a>
+			    	</li>
+			  	</ul>
+	  		</nav>
+	  		<br/>
 		</div>
-		<h1 th:text="${title}">Title</h1>
-		<div th:text="${message}">Fake content</div>
-		<div id="created" th:text="${#dates.format(date)}">July 11,
-			2012 2:17:16 PM CDT</div>
-        <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
-        </form>
 	</div>
 </body>
 </html>

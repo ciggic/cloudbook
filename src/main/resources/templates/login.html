@@ -8,26 +8,29 @@
 <body>
 	<div class="container h-100">
 		<div class="row h-100 justify-content-center align-items-center">
-			<div class="col-10 col-md-6 pull-md-">
-				<div class="card card-outline-primary mb-3">
-					<div class="card-header text-center">
-						<h5 class="card-title">Login</h5>
+			<div class="col-10 col-md-6 pull-md-2">
+				<div class="card card-outline-primary mb-3 bg-secondary">
+					<div class="card-header text-center text-white">
+						<h5 class="card-title">Enter Credentials</h5>
 					</div>
-					<div class="card-body">
-						<form>
+					<div class="card-body bg-white">
+						<form name="form" th:action="@{/login}" action="/login" method="POST">
 							<div class="form-group">
-								<label for="exampleInputEmail1">Usename</label>
-							    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+								<label for="username">Username</label>
+							    <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username">
 							  </div>
 							  <br/>
 							  <div class="form-group">
-							    <label for="exampleInputPassword1">Password</label>
-							    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+							    <label for="password">Password</label>
+							    <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
 							  </div>
 							  <br/>
 							  <div class="form-group">
-							  	<button type="button" class="btn btn-secondary btn-lg btn-block">Submit</button>
+							  	<button type="submit" class="btn btn-lg btn-block bg-secondary text-white" id="login">Submit</button>
 							  </div>
+							  <br/>
+							  <p th:if="${param.logout}" class="alert alert-primary">You have been logged out</p>
+							  <p th:if="${param.error}" class="alert alert-danger">There was an error, please try again</p>
 						</form>
 					</div>
 				</div>

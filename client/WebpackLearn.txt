@@ -1,0 +1,61 @@
+
+
+install webpack
+
+explain how to run
+---------------------
+"scripts": {
+    "dev": "webpack -d --watch",
+    "qa": "webpack -d",
+    "prod": "webpack -p"
+  },
+------------------------------------------------------
+
+install html-webpack-plugin
+
+--------------------------------------------
+
+css-loader
+style-loader
+
+extract-text-webpack-plugin
+----------------------------------
+Webpack dev server
+
+1.npm i webpack-dev-server -D install
+change the package.js
+
+"scripts": {
+  "dev": "webpack-dev-server", //VS webpack -d
+  "qa": "webpack-dev-server",
+  "prod": "webpack -p"
+},
+
+npm run dev will run the server on port 8080 locally
+---------------------------------------
+
+devServer: {
+  contentBase:__dirname +'/dist',
+  compress:true,
+  port:9090,
+  stats:"errors-only" // minimal see for other options
+},
+--------------------------------------------------------------
+react installation
+
+npm install -D react react-dom
+
+installaton of babel
+
+npm i -D babel babel-preset-react babel-preset-es2015
+
+npm install --save-dev babel-loader babel-core
+
+rule for loading babel
+
+{
+  test : /\.js$/,
+  exclude:'/node_modules/'
+  use:'babel-loader'
+}
+

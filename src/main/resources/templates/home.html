@@ -3,10 +3,10 @@
 <head>
 <title th:text="${title}">Title</title>
 <link rel="stylesheet" th:href="@{/css/bootstrap.css}" href="../../css/bootstrap.css" />
+<script type="text/javascript" th:href="@{/app.bundle.js}" href="../../app.bundle.js"></script>
 </head>
 <body>
-	<div class="row">
-		
+	<div class="row">		
 		<div class="container-fluid">	
 			<nav class="navbar navbar-dark bg-dark">
 	    		<h2>
@@ -23,5 +23,6 @@
 	  		<br/>
 		</div>
 	</div>
+	<div id="root"></div>
 </body>
 </html>

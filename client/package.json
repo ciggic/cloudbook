@@ -15,6 +15,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "copy-webpack-plugin": "^4.2.0",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.1",
     "html-webpack-plugin": "^2.30.1",
@@ -27,9 +28,12 @@
     "webpack-dev-server": "^2.9.3"
   },
   "dependencies": {
+    "material-ui": "^1.0.0-beta.20",
     "path": "^0.12.7",
     "prop-types": "^15.6.0",
-    "webpack": "^3.7.1"
+    "react-tap-event-plugin": "^3.0.2",
+    "webpack": "^3.7.1",
+    "webpack-base-href": "^1.0.0"
   },
   "description": "Rhocare UI Module"
 }

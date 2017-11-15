@@ -1,5 +1,7 @@
 package com.cloudbook.rhosys.web;
 
+import java.io.FileNotFoundException;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -7,8 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 	
 	@RequestMapping("/")
-	public String home() {		
-		return "/home";
+	public String home() throws FileNotFoundException {		
+		
+		return "/index";
 	}
 	
 }

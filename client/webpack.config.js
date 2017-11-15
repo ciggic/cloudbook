@@ -1,17 +1,18 @@
 const path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const PATHS = {
     source: path.join(__dirname, 'app'),
-    JS_OUTPUT: path.join(__dirname, '../src/main/resources/static/')
+    output: path.join(__dirname, '../src/main/resources/static')
 };
 
 
 module.exports={
     entry : './src/index.js',
     output : {
-      path : PATHS.JS_OUTPUT,
+      path : PATHS.output,
       filename:'app.bundle.js'
     },
     module:{
@@ -31,7 +32,7 @@ module.exports={
       ]
     },
     devServer: {
-      contentBase:PATHS.JS_OUTPUT,
+      contentBase:PATHS.output,
       compress:true,
       port:9090,
       stats:"errors-only"
@@ -49,5 +50,5 @@ module.exports={
       disable :false,
       allChunks:true
     })
-  ]
+    ]
 };

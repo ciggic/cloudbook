@@ -15,10 +15,12 @@ install html-webpack-plugin
 
 --------------------------------------------
 
-css-loader
-style-loader
+npm install -D css-loader
+npm install -D style-loader
+npm install -D prop-types
 
-extract-text-webpack-plugin
+npm install -D extract-text-webpack-plugin
+
 ----------------------------------
 Webpack dev server
 

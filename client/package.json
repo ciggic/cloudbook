@@ -29,7 +29,12 @@
     "webpack-dev-server": "^2.9.4"
   },
   "dependencies": {
-    "path": "^0.12.7"
+     "material-ui": "^1.0.0-beta.20",
+     "path": "^0.12.7",
+     "prop-types": "^15.6.0",
+     "react-tap-event-plugin": "^3.0.2",
+     "webpack": "^3.7.1",
+     "webpack-base-href": "^1.0.0"
   },
   "description": "Rhocare UI Module"
 }

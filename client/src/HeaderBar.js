@@ -10,99 +10,96 @@ import AccountCircle from 'material-ui-icons/AccountCircle';
 import Switch from 'material-ui/Switch';
 import { FormControlLabel, FormGroup } from 'material-ui/Form';
 import Menu, { MenuItem } from 'material-ui/Menu';
+import { red, purple, grey } from 'material-ui/colors';
+
 
 const styles = theme => ({
-  root: {
-    marginTop: theme.spacing.unit * 0,
-    width: '100%',
-  },
-  flex: {
-    flex: 1,
-  },
-  menuButton: {
-    marginLeft: 0,
-    marginRight: 0,
-  },
+	root: {
+		marginTop: 0,
+		width: '100%'
+	},
+	header: {
+		background: '#4285f4'
+	},
+	flex: {
+		flex: 1,
+	},
+	menuButton: {
+		marginLeft: 0,
+		marginRight: 0,
+	},
 });
 
 class HeaderBar extends React.Component {
-  state = {
-    auth: true,
-    anchorEl: null,
-  };
+	state = {
+			auth: true,
+			anchorEl: null,
+	};
 
-  handleChange = (event, checked) => {
-    this.setState({ auth: checked });
-  };
+	handleChange = (event, checked) => {
+		this.setState({ auth: checked });
+	};
 
-  handleMenu = event => {
-    this.setState({ anchorEl: event.currentTarget });
-  };
+	handleMenu = event => {
+		this.setState({ anchorEl: event.currentTarget });
+	};
 
-  handleRequestClose = () => {
-    this.setState({ anchorEl: null });
-  };
+	handleRequestClose = () => {
+		this.setState({ anchorEl: null });
+	};
 
-  render() {
-    const { classes } = this.props;
-    const { auth, anchorEl } = this.state;
-    const open = Boolean(anchorEl);
-
-    return (
-      <div className={classes.root}>
-        <FormGroup>
-          <FormControlLabel control={
-                <Switch checked={auth} onChange={this.handleChange} aria-label="LoginSwitch" />
-            }
-            label={auth ? 'Logout' : 'Login'}
-          />
-        </FormGroup>
-        <AppBar position="static">
-          <Toolbar>
-            <IconButton className={classes.menuButton} color="contrast" aria-label="Menu">
-              <MenuIcon />
-            </IconButton>
-            <Typography type="title" color="inherit" className={classes.flex}>
-              Title
-            </Typography>
-            {auth && (
-              <div>
-                <IconButton
-                  aria-owns={open ? 'menu-appbar' : null}
-                  aria-haspopup="true"
-                  onClick={this.handleMenu}
-                  color="contrast"
-                >
-                  <AccountCircle />
-                </IconButton>
-                <Menu
-                  id="menu-appbar"
-                  anchorEl={anchorEl}
-                  anchorOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
-                  }}
-                  transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
-                  }}
-                  open={open}
-                  onRequestClose={this.handleRequestClose}
-                >
-                  <MenuItem onClick={this.handleRequestClose}>Profile</MenuItem>
-                  <MenuItem onClick={this.handleRequestClose}>My account</MenuItem>
-                </Menu>
-              </div>
-            )}
-          </Toolbar>
-        </AppBar>
-      </div>
-    );
-  }
+	render() {
+		const { classes } = this.props;
+		const { auth, anchorEl } = this.state;
+		const open = Boolean(anchorEl);
+		return (
+				<div className = {classes.root}>
+				<AppBar className = {classes.header}>
+				<Toolbar disableGutters={true}>
+				<IconButton className={classes.menuButton} color="contrast" aria-label="Menu">
+				<MenuIcon />
+				</IconButton>
+				<Typography type="title" color="inherit" className={classes.flex}>
+				Cloudbook
+				</Typography>
+				{auth && (
+						<div>
+						<IconButton
+						aria-owns={open ? 'menu-appbar' : null}
+						aria-haspopup="true"
+							onClick={this.handleMenu}
+						color="contrast"
+							>
+						<AccountCircle />
+						</IconButton>
+						<Menu
+						id="menu-appbar"
+							anchorEl={anchorEl}
+						anchorOrigin={{
+							vertical: 'top',
+							horizontal: 'right',
+						}}
+						transformOrigin={{
+							vertical: 'top',
+							horizontal: 'right',
+						}}
+						open={open}
+						onRequestClose={this.handleRequestClose}
+						>
+						<MenuItem onClick={this.handleRequestClose}>Profile</MenuItem>
+						<MenuItem onClick={this.handleRequestClose}>My account</MenuItem>
+						</Menu>
+						</div>
+				)}
+				</Toolbar>
+				</AppBar>
+				</div>
+		);
+	}
 }
 
 HeaderBar.propTypes = {
-  classes: PropTypes.object.isRequired,
+		classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(HeaderBar);

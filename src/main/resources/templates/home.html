@@ -3,10 +3,36 @@
 <head>
 <title th:text="${title}">Title</title>
 <link rel="stylesheet" th:href="@{/css/bootstrap.css}" href="../../css/bootstrap.css" />
+
+<script type="text/javascript">
+	var xhttp = new XMLHttpRequest();
+	
+	function ledON() {
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			 document.getElementById("result").innerHTML = this.responseText;
+				result.className = "alert alert-success";
+			}
+        };
+		xhttp.open("GET", "./led/on", true);
+		xhttp.send();
+	}
+	function ledOFF() {
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				var result= document.getElementById("result");
+				result.innerHTML = this.responseText;
+				result.className = "alert alert-danger";
+			}
+        };
+		xhttp.open("GET", "./led/off", true);
+		xhttp.send();
+	}
+	</script>
+
 </head>
 <body>
 	<div class="row">
-		
 		<div class="container-fluid">	
 			<nav class="navbar navbar-dark bg-dark">
 	    		<h2>
@@ -21,6 +47,17 @@
 			  	</ul>
 	  		</nav>
 	  		<br/>
+		</div>
+	</div>
+	<div class="container">
+		<button type="button" class="btn btn-success" onclick="ledON()">LED-ON</button>
+		<button type="button" class="btn btn-danger" onclick="ledOFF()">LED-OFF</button>
+		<br/>
+		<br/>
+		<br/>
+		<div class="row">
+			<div class="alert alert-success" id ="result">
+			</div>
 		</div>
 	</div>
 </body>

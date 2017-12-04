@@ -11,6 +11,7 @@ import Switch from 'material-ui/Switch';
 import { FormControlLabel, FormGroup } from 'material-ui/Form';
 import Menu, { MenuItem } from 'material-ui/Menu';
 import { red, purple, grey } from 'material-ui/colors';
+import Divider from 'material-ui/Divider';
 
 
 const styles = theme => ({
@@ -54,46 +55,42 @@ class HeaderBar extends React.Component {
 		const open = Boolean(anchorEl);
 		return (
 				<div className = {classes.root}>
-				<AppBar className = {classes.header}>
-				<Toolbar disableGutters={true}>
-				<IconButton className={classes.menuButton} color="contrast" aria-label="Menu">
-				<MenuIcon />
-				</IconButton>
-				<Typography type="title" color="inherit" className={classes.flex}>
-				Cloudbook
-				</Typography>
-				{auth && (
-						<div>
-						<IconButton
-						aria-owns={open ? 'menu-appbar' : null}
-						aria-haspopup="true"
-							onClick={this.handleMenu}
-						color="contrast"
-							>
-						<AccountCircle />
-						</IconButton>
-						<Menu
-						id="menu-appbar"
-							anchorEl={anchorEl}
-						anchorOrigin={{
-							vertical: 'top',
-							horizontal: 'right',
-						}}
-						transformOrigin={{
-							vertical: 'top',
-							horizontal: 'right',
-						}}
-						open={open}
-						onRequestClose={this.handleRequestClose}
-						>
-						<MenuItem onClick={this.handleRequestClose}>Profile</MenuItem>
-						<MenuItem onClick={this.handleRequestClose}>My account</MenuItem>
-						</Menu>
-						</div>
-				)}
-				</Toolbar>
+					<AppBar className = {classes.header}>
+						<Toolbar disableGutters={true}>
+							<IconButton className={classes.menuButton} color="contrast" aria-label="Menu">
+								<MenuIcon />
+							</IconButton>
+								<Typography type="title" color="inherit" className={classes.flex}>
+										Cloudbook
+								</Typography>
+								{auth && (
+									<div>
+										<IconButton
+											aria-owns={open ? 'menu-appbar' : null}
+											aria-haspopup="true" onClick={this.handleMenu}
+											color="contrast" >
+											<AccountCircle />
+										</IconButton>
+										<Menu id="menu-appbar"
+											anchorEl={anchorEl}
+											anchorOrigin={{
+												vertical: 'top',
+												horizontal: 'right',
+											}}
+											transformOrigin={{
+												vertical: 'top',
+												horizontal: 'right',
+											}}
+											open={open}
+											onRequestClose={this.handleRequestClose} >
+											<MenuItem onClick={this.handleRequestClose}>Profile</MenuItem>
+											<MenuItem onClick={this.handleRequestClose}>My account</MenuItem>
+										</Menu>
+									</div> )
+								}
+						</Toolbar>
 				</AppBar>
-				</div>
+			</div>
 		);
 	}
 }

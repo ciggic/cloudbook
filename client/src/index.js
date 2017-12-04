@@ -1,11 +1,23 @@
-const css= require('./css/app.css');
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import HeaderBar from './HeaderBar'; // there is difference between {App} vs import App from "./App"
+import Center from './CenterBody';
+
+ReactDOM.render(
+  <div>
+    <HeaderBar /> 
+    <br/>    
+ </div>,
+  document.getElementById('header')
+);
 
 
 ReactDOM.render(
-  <HeaderBar />,
-  document.getElementById('root')
+  <div>
+    <Center />     
+ </div>,
+  document.getElementById('center')
 );
+
+
